@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Data Table</title>
+    <style>
+        .download_csv {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Submitted User Data</h2>
+    <div class="download_csv">
+        <button onclick="downloadCSV()">Download CSV</button>
+    </div>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Education</th>
+                <th>Employment</th>
+                <th>Languages</th>
+                <th>Skills</th>
+                <th>Interested Skills</th>
+                <th>Mode</th>
+                <th>Time</th>
+                <th>Job</th>
+                <th>Shift</th>
+                <th>Experience</th>
+                <th>Expected Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+                <td>{{ user[3] }}</td>
+                <td>{{ user[4] }}</td>
+                <td>{{ user[5] }}</td>
+                <td>{{ user[7] }}</td>
+                <td>{{ user[8] }}</td>
+                <td>{{ user[9] }}</td>
+                <td>{{ user[10] }}</td>
+                <td>{{ user[11] }}</td>
+                <td>{{ user[12] }}</td>
+                <td>{{ user[13] }}</td>
+                <td>{{ user[14] }}</td>
+                <td>{{ user[15] }}</td>
+                <td>{{ user[16] }}</td>
+                <td>{{ user[17] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- <form action="/delete_all" method="post" onsubmit="return confirm('Are you sure you want to delete all records?');">
+        <button type="submit" style="background-color: red; color: white;">Delete All Records</button>
+    </form> -->
+
+    <a href="/login_page">← Log Out</a>
+
+</body>
+<script src="/static/data.js">
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/admin.js" defer></script>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/check" method="GET">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username"
+                title="Your registered username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password"
+                title="Your account password" required>
+
+            <button type="submit" title="Click to login">Login</button>
+            <a href='/'>Go Home</a>
+        </form>
+
+        {% if response %}
+        <div id="popup" class="popup">{{ response }}</div>
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
