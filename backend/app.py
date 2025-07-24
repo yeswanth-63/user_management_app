@@ -1,7 +1,17 @@
-from flask import Flask, render_template, request, redirect,session
 import sqlite3
+import sys
+import os
+from flask import Flask, render_template, request, redirect,session
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../database')))
 from database import init_db
-app = Flask(__name__)
+
+
+app = Flask(
+    __name__,
+    template_folder=os.path.abspath("../frontend/templates"),
+    static_folder=os.path.abspath("../frontend/static")
+)
+
 app.secret_key="codematrix"
 
 @app.route('/')
